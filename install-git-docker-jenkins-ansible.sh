@@ -2,7 +2,7 @@
 
 sudo apt-get update
 
-sudo apt-get install git-all
+sudo apt-get install git-all -y
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -34,3 +34,4 @@ sudo apt-get install software-properties-common -y
 sudo add-apt-get-repository --yes --update ppa:ansible/ansible -y
 sudo apt-get install ansible -y
 
+sudo apt-get update
