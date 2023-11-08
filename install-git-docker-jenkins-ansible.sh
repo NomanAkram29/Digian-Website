@@ -2,14 +2,15 @@
 
 sudo apt-get update
 
+# Intsall Git
 sudo apt-get install git-all -y
 
 # Add Docker's official GPG key:
 sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
+sudo apt-get install ca-certificates curl gnupg -y
+sudo install -m 0755 -d /etc/apt/keyrings -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg -y
 
 # Add the repository to Apt sources:
 echo \
@@ -20,15 +21,19 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
+# Install Java environment 
 sudo apt-get install fontconfig openjdk-17-jre -y
 
+# Install jenkins
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
 https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt-get/sources.list.d/jenkins.list > /dev/null
-sudo apt-get update && sudo apt-get install jenkins -y
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
 
+#install Ansible
 sudo apt-get update
 sudo apt-get install software-properties-common -y
 sudo add-apt-get-repository --yes --update ppa:ansible/ansible -y
